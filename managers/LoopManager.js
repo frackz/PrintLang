@@ -18,8 +18,7 @@ module.exports = class VariableManager {
         if (values[4] == '') {return console.error(`Synax error on line ${num}, value is null`)}
 
         for (var i = 0; i < parseInt(values[1]); i++) {
-            //
-            console.log(this.varManager.load(line.split("times = ")[1]))
+                console.log(this.varManager.load(line.split("times = ")[1]))
         }
     }
 }

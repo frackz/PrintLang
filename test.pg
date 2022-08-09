@@ -1,3 +1,5 @@
-var variable = This is my variable.
-Content of variable: #var=variable
-loop 100 times = Im cool
+print = bob
+var bob = jens er sej
+print = var bob content: #var=bob
+edit bob = jens
+print = var bob new content: #var=bob
