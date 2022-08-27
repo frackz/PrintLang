@@ -26,12 +26,17 @@ module.exports = class VariableManager {
         this.vars.set(''+values[1]+'', contents)
     }
 
-    load(line) {
+    load(line, errorfree=false) {
         var returnLine = line
         for (var i = 0; i < checkOccurences(line, "#var="); i++) {
             returnLine=returnLine.replace(/(\r\n|\n|\r)/gm, "");
             const name = returnLine.split("#var=")[1].split(" ")[0]
-            if (!this.vars.has(name)) {return console.error(`Variable doesn't exist, with name ${name}`)}
+            if (!this.vars.has(name)) {
+                if (errorfree == true) {
+                    return {error: true, errorMessage: "Variable doesn't exist, with name "+name)
+                }
+                return console.error(`Variable doesn't exist, with name ${name}`)
+            }
             returnLine = returnLine.replace(`#var=${name}`, this.vars.get(name))
         }
         return returnLine
