@@ -1,8 +1,9 @@
 function onlyNumbers(str) {return /^[0-9]+$/.test(str);}
-function checkOccurences(string, word) {return string.split(word).length - 1;}
 const varM = require('./VariableManager')
-const varManager = new varM(vars)
 module.exports = class VariableManager {
+    constructor(vars) {
+        this.varManager = new varM(vars)
+    }
     loop(line, num) {
         const values = line.split(' ')
 
@@ -14,7 +15,7 @@ module.exports = class VariableManager {
         if (values[4] == '') {return console.error(`Synax error on line ${num}, value is null`)}
 
         for (var i = 0; i < parseInt(values[1]); i++) {
-            const response = varManager.load(line.split("times = ")[1], true)
+            const response = this.varManager.load(line.split("times = ")[1], true)
             if (response.error == true) {
                 console.log("Error found! "+response.errorMessage)
             } else {

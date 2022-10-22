@@ -1,0 +1,22 @@
+{
+  "name": "printlang",
+  "version": "1.0.0",
+  "description": "a very bad \"lang\" made for printing, make variables comments and loop some prints",
+  "main": "printlang.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frackz/PrintLang.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frackz/PrintLang/issues"
+  },
+  "homepage": "https://github.com/frackz/PrintLang#readme",
+  "dependencies": {
+    "hashmap": "^2.4.0"
+  }
+}

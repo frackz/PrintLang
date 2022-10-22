@@ -1,10 +1,8 @@
-// Init
 const Variable = require('./managers/VariableManager')
 const Loop = require('./managers/LoopManager')
 const Hashmap = require('hashmap')
 
 const Variables = new Hashmap()
-
 
 const file = process.argv[2]
 if (file == null) {return console.error("Cannot find the specified file")}
@@ -26,6 +24,6 @@ splitted.forEach(function(contents) {
     else if (contents == '') {}
     else if (contents.startsWith('var')) {VariableManager.init(contents, CurrentLine)} 
     else if(contents.startsWith('loop')) {LoopManager.loop(contents, CurrentLine)} 
-    else {console.log(VariableManager.load(contents))}
+    else {console.log(VariableManager.load(contents).message.replace("print = ", ""))}
 })
 
